@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@300&family=Montserrat+Alternates:wght@300&display=swap');
+body {
+    background-color: #fff;
+    font-family: 'Lato', sans-serif !important;
+    color: #000;
+}
+
+.pg-canvas {
+    display: block;
+    position: fixed;
+}
