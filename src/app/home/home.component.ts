@@ -1,13 +1,16 @@
+import { environment } from './../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-declare var $ :any
+import { NgForm } from '@angular/forms';
+declare var $: any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  isSuccess: boolean = false;
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     $('#bg-particles').particleground({
@@ -21,8 +24,20 @@ export class HomeComponent implements OnInit {
       density: '9000',
       particleRadius: '4',
       parallaxMultiplier: '4',
-
-  });
+    });
   }
-
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      form.value['type'] = 'theamsterdamgoodmurderguide';
+      this.http
+        .post(environment.API_URL + '/forms', form.value)
+        .subscribe((res) => {
+          this.isSuccess = true;
+          form.reset();
+          setTimeout(() => {
+            this.isSuccess = false;
+          }, 5000);
+        });
+    }
+  }
 }

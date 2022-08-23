@@ -16,13 +16,31 @@
     </div>
     <!-- form -->
     <div class="container">
-        <div class="sub-items w-50 m-auto ">
+        <div class="sub-items w-50 m-auto form">
 
-            <form action="https://formsubmit.co/karlpwebster@gmail.com" method="POST" class="border border-primary border-1 rounded" id="browser">
+          <div *ngIf="isSuccess" class="alert alert-primary" role="alert">
+            your request has been submitted
+          </div>
+            <form class="border border-primary border-1 rounded" id="browser"  #form="ngForm" (ngSubmit)="onSubmit(form)">
                 <div>
-                    <div class="p-2"><input type="text" name="Name" placeholder="Enter your name" required class="form-control"></div>
-                    <div class="p-2"><input type="email" name="Email" placeholder="Enter your email" required class="form-control"></div>
 
+                    <div class="p-2">
+                        <div class="form-group">
+                        <input type="text" class="form-control" name="name" ngModel #name="ngModel" [ngClass]="{ 'is-invalid': form.submitted && name.invalid }"  placeholder="Enter your name"  required />
+                        <div *ngIf="form.submitted && name.invalid" class="invalid-feedback">
+                            <div *ngIf="$any(name)?.errors?.required"> Name is required</div>
+                        </div>
+                    </div>
+                </div>
+                   <div class="p-2">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="email" ngModel #email="ngModel" [ngClass]="{ 'is-invalid': form.submitted && email.invalid }" placeholder="Enter your email"   required email />
+                      <div *ngIf="form.submitted && email.invalid" class="invalid-feedback">
+                          <div *ngIf="$any(email)?.errors?.required">Email is required</div>
+                          <div *ngIf="$any(email)?.errors?.email">Email must be a valid email address</div>
+                      </div>
+                  </div>
+                </div>
                 </div>
                 <div class="btn-sub w-75 p-2"><button type="submit" class="  btn btn-primary"> <h6 class="m-0">GIVE ME THE GIFT OF GREAT WRITING</h6> </button></div>
             </form>
