@@ -10,6 +10,7 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
   isSuccess: boolean = false;
+  isSubmitted: boolean = false;
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -27,12 +28,15 @@ export class HomeComponent implements OnInit {
     });
   }
   onSubmit(form: NgForm) {
+    this.isSubmitted = true;
+
     if (form.valid) {
       form.value['type'] = 'theamsterdamgoodmurderguide';
       this.http
         .post(environment.API_URL + '/forms', form.value)
         .subscribe((res) => {
           this.isSuccess = true;
+    this.isSubmitted = false;
           form.reset();
           setTimeout(() => {
             this.isSuccess = false;
