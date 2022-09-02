@@ -15,8 +15,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     $('#bg-particles').particleground({
-      dotColor: 'rgb(101, 236, 236)',
-      lineColor: '#D3959B',
+      // dotColor: 'rgb(101, 236, 236)',
+      // lineColor: '#D3959B',
+      dotColor: '#fff',
+      lineColor: '#fff',
       minSpeedX: '0.1',
       minSpeedY: '0.1',
       maxSpeedX: '0.6',

@@ -16,29 +16,33 @@ footer {
 
 .fppter-item-2 {
     font-size: 0.85rem;
-    right: 0 !important;
+    // right: 0 !important;
 }
 
 .hp-item {
-    color: rgb(90, 85, 85);
+    color: rgb(90, 85, 85) !important;
 }
 
 .hp-item-2 {
-    color: rgb(90, 85, 85);
+    color: rgb(90, 85, 85) !important;
 }
 
 .test:hover {
-    background-color: rgba(90, 85, 85, 0.705);
-    color: #ffc107;
-    border-radius: 50%;
+    background-color: rgba(90, 85, 85, 0.705) !important;
+    color: #ffc107 !important;
+    border-radius: 50% !important;
     width: 100px !important;
     height: 100px !important;
-    padding: 8px;
+    padding: 8px !important;
 }
 
 @media (max-width: 575.98px) {
     .hp-item,
     .fppter-item-1 {
+        text-align: center !important;
+    }
+    .footer-items {
+        flex-direction: column !important;
         text-align: center !important;
     }
 }
@@ -47,5 +51,11 @@ footer {
     .hp-item,
     .fppter-item-1 {
         text-align: center !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .footer-items {
+        justify-content: space-around !important;
     }
 }

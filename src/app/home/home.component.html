@@ -1,12 +1,12 @@
 <section id="bg-particles">
     <div class="container  position-relative">
         <div class="items w-75 m-auto">
-            <h1 class="f-size text-primary text-center mt-3">The Amsterdam Good Murder Guide</h1>
+            <!-- <h1 class="f-size text-primary text-center mt-3">The Amsterdam Good Murder Guide</h1> -->
 
-            <img src="assets/images/The-Amsterdam-Good-Murder-Duide-temporary-cover.jpeg" class="img-sec w-50 h-75 mt-5" alt="">
+            <img src="assets/images/collins-final-2.1_AUGUST_22—front-cover.jpg" class="img-sec w-50 h-75 mt-5" alt="">
 
 
-            <p class="lead mt-5">One way or the other, by hook or by crook, The Amsterdam Good Murder Guide will be available to read very soon. To make sure to get your copy before the Netflix adaptation, making you the coolest person you know and the envy of all your friends,
+            <p class="items-p lead mt-5">One way or the other, by hook or by crook, The Amsterdam Good Murder Guide will be available to read very soon. To make sure to get your copy before the Netflix adaptation, making you the coolest person you know and the envy of all your friends,
                 pop your name and email address in here…
             </p>
 
@@ -18,31 +18,31 @@
     <div class="container">
         <div class="sub-items w-50 m-auto form">
 
-          <div *ngIf="isSuccess" class="alert alert-primary" role="alert">
-            your request has been submitted
-          </div>
-            <form class="border border-primary border-1 rounded" id="browser"  #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <div *ngIf="isSuccess" class="alert alert-primary" role="alert">
+                your request has been submitted
+            </div>
+            <form class="border border-primary border-1 rounded" id="browser" #form="ngForm" (ngSubmit)="onSubmit(form)">
                 <div>
 
                     <div class="p-2">
                         <div class="form-group">
-                        <input type="text" class="form-control" name="name" ngModel #name="ngModel" [ngClass]="{ 'is-invalid': isSubmitted && name.invalid }"  placeholder="Enter your name"  required />
-                        <div *ngIf="isSubmitted && name.invalid" class="invalid-feedback">
-                            <div *ngIf="$any(name)?.errors?.required"> Name is required</div>
+                            <input type="text" class="form-control" name="name" ngModel #name="ngModel" [ngClass]="{ 'is-invalid': isSubmitted && name.invalid }" placeholder="Enter your name" required />
+                            <div *ngIf="isSubmitted && name.invalid" class="invalid-feedback">
+                                <div *ngIf="$any(name)?.errors?.required"> Name is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" ngModel #email="ngModel" [ngClass]="{ 'is-invalid': isSubmitted && email.invalid }" placeholder="Enter your email" required email />
+                            <div *ngIf="isSubmitted && email.invalid" class="invalid-feedback">
+                                <div *ngIf="$any(email)?.errors?.required">Email is required</div>
+                                <div *ngIf="$any(email)?.errors?.email">Email must be a valid email address</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                   <div class="p-2">
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="email" ngModel #email="ngModel" [ngClass]="{ 'is-invalid': isSubmitted && email.invalid }" placeholder="Enter your email"   required email />
-                      <div *ngIf="isSubmitted && email.invalid" class="invalid-feedback">
-                          <div *ngIf="$any(email)?.errors?.required">Email is required</div>
-                          <div *ngIf="$any(email)?.errors?.email">Email must be a valid email address</div>
-                      </div>
-                  </div>
-                </div>
-                </div>
-                <div class="btn-sub w-75 p-2"><button type="submit" class="  btn btn-primary"> <h6 class="m-0">Keep me updated</h6> </button></div>
+                <div class="btn-sub w-75 p-2"><button type="submit" class="  btn btn-primary"> <h6 class="m-0">Keep me updated!</h6> </button></div>
             </form>
         </div>
     </div>
