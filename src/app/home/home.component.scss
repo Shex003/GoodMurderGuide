@@ -1,7 +1,6 @@
-#bg-particles {
-    min-height: 100vh;
-}
-
+// #bg-particles {
+//     min-height: 100vh;
+// }
 .f-size {
     font-size: 55px !important;
     font-weight: 900 !important;
@@ -10,6 +9,15 @@
 .img-sec {
     display: block;
     margin: auto;
+}
+
+.btn {
+    background-color: #f35758;
+    color: bisque;
+}
+
+.border {
+    color: rgb(255, 0, 0) !important;
 }
 
 // mediaQsm(landscape phone)
@@ -49,6 +57,7 @@
     }
     .items-p {
         text-align: center !important;
+        margin-top: 16px !important;
     }
     .img-sec {
         width: 85% !important;

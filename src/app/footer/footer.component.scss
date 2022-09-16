@@ -1,8 +1,10 @@
 footer {
-    background: #D3959B;
-    background: -webkit-linear-gradient(to right, #BFE6BA, #D3959B);
-    background: linear-gradient(to right, #BFE6BA, #D3959B);
-    z-index: 545454 !important;
+    // background: #D3959B;
+    // background: -webkit-linear-gradient(to right, #BFE6BA, #D3959B);
+    // background: linear-gradient(to right, #BFE6BA, #D3959B);
+    // z-index: 545454 !important;
+    background-image: linear-gradient(to right, #f35758, #fa3c3c);
+    background-color: #f35758;
 }
 
 .footer-p {
@@ -20,14 +22,16 @@ footer {
 }
 
 .hp-item {
-    color: rgb(90, 85, 85) !important;
+    // color: rgb(90, 85, 85) !important;
+    color: rgb(43, 40, 40) !important;
 }
 
 .hp-item-2 {
-    color: rgb(90, 85, 85) !important;
+    // color: rgb(90, 85, 85) !important;
+    color: rgb(43, 40, 40) !important;
 }
 
-.test:hover {
+.hp-item-2:hover {
     background-color: rgba(90, 85, 85, 0.705) !important;
     color: #ffc107 !important;
     border-radius: 50% !important;
@@ -61,5 +65,11 @@ footer {
 @media (max-width: 991.98px) {
     .footer-items {
         justify-content: space-around !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .footer-main {
+        margin-top: 16px !important;
     }
 }
